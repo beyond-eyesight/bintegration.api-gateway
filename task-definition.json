@@ -1,0 +1,23 @@
+{
+  "inferenceAccelerators": [],
+  "containerDefinitions": [
+    {
+      "name": "api-gateway",
+      "image": "api-gateway:latest",
+      "resourceRequirements": null,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": "5555",
+          "hostPort": "5555",
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "executionRoleArn": null,
+  "memory": "512",
+  "cpu": "256",
+  "family": "api-gateway-task",
+  "volumes": []
+}
