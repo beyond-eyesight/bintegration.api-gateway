@@ -1,0 +1,21 @@
+
+spring:
+  cloud:
+    gateway:
+      #      https://github.com/spring-cloud/spring-cloud-gateway/issues/1282
+      routes:
+        - id: path_route
+          uri: https://dev.bintegration.so:8443
+          predicates:
+            - Path=/iam/**
+          filters:
+            - RewritePath=/iam/?(?<segment>.*), /$\{segment}
+
+logging:
+  level:
+    reactor:
+      netty: trace
+    org:
+      springframework:
+        cloud:
+          gateway: debug
