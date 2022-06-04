@@ -1,4 +1,4 @@
-name: CD - Keycloak Deploy
+name: CD - dev deploy
 
 on: workflow_dispatch
 
